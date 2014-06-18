@@ -11,7 +11,7 @@
  *                 and/or override them with custom routes (`config/routes.js`)
  *
  *                 NOTE: The code you write here supports both HTTP and Socket.io automatically.
- *https://github.com/johntom/crm-MEANSMixup
+ *              https://github.com/johntom/crm-MEANSMixup
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
