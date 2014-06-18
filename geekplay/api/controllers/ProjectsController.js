@@ -25,8 +25,9 @@ module.exports = {
    discover: function (req, res) {
     
     // Send a JSON response
+
     return res.json({
-      hello: 'world'
+      hello: 'world11'
     });
   },
 
@@ -36,10 +37,10 @@ module.exports = {
    *    `/projects/detail`
    */
    detail: function (req, res) {
-    
+    // console.log('detail');
     // Send a JSON response
     return res.json({
-      hello: 'world'
+      hello: 'detail1'
     });
   },
 
