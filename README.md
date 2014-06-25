@@ -1,5 +1,5 @@
 **本项目 是一款科技产品首发与体验，测评平台，由各科技迷共同开发与维护。底层基于高性能nodejs驱动开发**
->>平台架构 由：sailsjs+ mongodb 
+>平台架构 由：sailsjs+ mongodb 
 	sailsjs 项目主页：http://sailsjs.org
 
 
@@ -21,8 +21,8 @@ github 多人协作开发指南：
 现有分支名：
 
 >origin/angel-fund //
-  origin/master	//主分支
-  origin/zac   //后端负责主导分支
+>origin/master	//主分支
+>origin/zac   //后端负责主导分支
 
 	1：新建自己的本地分支 git命令  git branch 新分支名字 
  分支名规则'github帐号  _（server或Client）' 例如：'zac_server'(server表示后端组，Client表示前段组)
