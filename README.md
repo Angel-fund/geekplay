@@ -21,7 +21,9 @@ github 多人协作开发指南：
 现有分支名：
 
 >origin/angel-fund //
+
 >origin/master	//主分支
+
 >origin/zac   //后端负责主导分支
 
 	1：新建自己的本地分支 git命令  git branch 新分支名字 
