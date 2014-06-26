@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="page">
+		<div class="text-center">
+			<div id="logo">
+				<img src="/images/logo.png">
+				<h4>GEEK ~ 工业</h4>
+			</div>
+		</div>
+		<form novalidate name="loginForm" class="form-signin" ng-submit="signForm()">
+			<input type="email" class="form-control" name="email" ng-model="signup.email" placeholder="Email Address" style="margin-bottom: -1px;" />
+
+			<input type="password" class="form-control" name="password" ng-model="signup.password" required ng-minlength=5  style="margin-bottom: -1px;"/>
+			<label class="checkbox">
+				<input type="checkbox" value="remember-me">Remember me</label>
+			<button class="mtm btn btn-lg btn-success btn-block" type="submit" ng-disabled="loginForm.$invalid">登 录</button>
+		</form>
+		<div class="mtm text-center text-muted">
+			<div>还没有账号 <a href="#/register" >Register</a></div>
+			<p>忘记密码</p>
+		</div>
+	</div>
+</div>

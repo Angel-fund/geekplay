@@ -13,12 +13,12 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">      
+        <link rel="stylesheet" href="/js/bower_components/bootstrap/dist/css/bootstrap.min.css">      
         <link rel="stylesheet" href="/css/theme.css">      
         <!-- adds CSS media query support to IE8   -->
         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-            <script src="/bower_components/responderjs/responder.min.js"></script>
+            <script src="/js/bower_components/responderjs/responder.min.js"></script>
         <![endif]-->        
 
         <!-- Common Scripts: -->
@@ -26,34 +26,14 @@
         <!-- // <script src="./js/modernizr.js"></script> -->       
     </head>
 
-  <body>
+  <body ng-app="app">
     
     <!-- Include the view file for the current controller/route -->
-    <div class="row">
-      <div class="picside" style="background-image: url(/images/cover/home/7.jpg);">
-        <%- partial('partials/picside')%>
-      </div>
-      <div class="recom" >
-        <div class="content">
-           <%- body %>
-          <div ng-view></div>
-        </div>
-      </div>
-    </div>    
-    
-    <script src="/bower_components/seajs/sea.js"></script>
-    <!-- // <script src="/js/uilibs/angularjs/angular1.0.8/angular.js"></script> -->
-    <!-- // <script src="/js/uilibs/angularjs/angular-ngSea.js"></script> -->
-      <script src="/bower_components/seajs-config.js" language="javascript"></script>
-      <script language="javascript">
-          var __seajs_debug = 2;
-          var __seajs_assets_version = '8';
-
-          seajs.use('/js/app.js', function(app){
-            // angular.bootstrap(document, ['app']);     
-            console.log('jquery1',jQuery);
-          });
-
-      </script>
+      <!-- <div class="picside" style="background-image: url(/images/cover/home/7.jpg);">
+        <-%- partial('partials/picside')%->
+         <-%- body %->
+      </div> -->
+    <div ng-view></div>
+    <script data-main="/js/main.js" src="/js/bower_components/requirejs/require.js"></script>    
     </body>
 </html>
