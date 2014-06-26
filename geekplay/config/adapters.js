@@ -42,7 +42,7 @@ module.exports.adapters = {
       // MongoAdapter
       // https://github.com/balderdashy/sails-mongo
       mongo: {
-        module    : 'sails-mongo',
+        module  : 'sails-mongo',
         host    : 'localhost',
         port    : '27017',
         user    : '',
