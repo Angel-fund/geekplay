@@ -26,8 +26,11 @@ module.exports = {
     
     // Send a JSON response
 
-    return res.json({
-      hello: 'world11'
+    return res.json({data:[
+          { name: '55Igor', address: '=123 tyhrtWe' },
+          { name: '55lucas', address: '=nier yo ko ' },
+         { name: '55osmen', address: '=Somewhere' },
+          { name: 'geek', address: '=34 sdg ggdg ydt' }]
     });
   },
 

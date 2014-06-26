@@ -12,12 +12,30 @@
  *
  *                 NOTE: The code you write here supports both HTTP and Socket.io automatically.
  *https://github.com/johntom/crm-MEANSMixup
+ *https://github.com/mz121star/NJBlog/tree/master/routes
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
 module.exports = {
-    
-  
+  /**
+   * Action blueprints:
+   *    `/user/index`
+  */
+  login: function(req, res)
+  {
+    /* */
+  },
+
+  /**
+   * Action blueprints:
+   *    `/user/logout`
+  */
+  logout: function(req, res)
+  {
+    req.session.destroy();
+    return res.json({});
+  },
+
   /**
    * Action blueprints:
    *    `/user/index`

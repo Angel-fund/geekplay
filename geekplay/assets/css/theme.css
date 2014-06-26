@@ -7,9 +7,85 @@
 .mrm{margin-right: 1em}
 .mbm{margin-bottom: 1em}
 .mrl{margin-right: 2em}
+.mll{margin-right: 2em}
 .ptl{padding-top: 2em}
 .plm{padding-left: 1em}
 .pbm{padding-bottom: 1em}
 .mt-nav{margin-top: 48px}
 .ps{padding: .5em}
 .pl{padding: 1em}
+/*rest bootstarp*/
+.btn{border-radius: 2px;}
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active,.btn-primary {
+background-color: #5379F1;
+border-color: #2182DB;
+}
+.btn-success {
+	background-color: #20b74e;
+	border-color: #27c33d;
+}
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
+	background-color: #1FAD47;
+	border-color: #14BB43;
+}
+
+.form-control{
+	box-shadow: none;
+	border-color: #ddd;
+	border-radius: 2px;
+}
+/*login from start*/
+.page{margin-top: 5rem}
+.project-title {
+	position: relative;
+	font-size: 16px;
+	color: #646878;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.project-title::before {
+	content: '';
+	width: 100%;
+	border-top: 1px solid #E0E0E0;
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 0;
+}
+.project-title span {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border:1px solid #ddd;
+	position: relative;
+	background: white;
+	padding: 0 12px;
+	display: inline-block;
+	color: #646878;
+	font-size: 14px;
+	top: -28px;
+	padding-top: 1.5em;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.form-signin .form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*login from end*/

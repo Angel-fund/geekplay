@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="page">
+
+		<div class="text-center">
+			<div id="logo" class="page">
+				<img src="/images/logo.png">
+				<p>GEEK ~ 工业</p>
+			</div>
+			<div class="project-title">
+				<a href="javascript:;" class="mrl">
+					<span>产品团队</span>
+				</a>
+				<a href="javascript:;" class="mll">
+					<span>天使投资人</span>
+				</a>
+			</div>
+		</div>
+		<form novalidate name="loginForm" class="form-signin" ng-submit="signForm()">
+			<input  type="text" class="form-control" placeholder="Desired username" name="username" ng-model="signup.username"  ng-minlength=3  ng-maxlength=20  required />
+
+			<input type="email" class="form-control" name="email" ng-model="signup.email" placeholder="Email Address" />
+
+			<input type="password" class="form-control" name="password" ng-model="signup.password" required ng-minlength=5/>
+			<label class="checkbox">
+				<input type="checkbox" value="remember-me">Remember me</label>
+			<button class="btn btn-lg btn-success btn-block" type="submit" ng-disabled="loginForm.$invalid">注 册</button>
+		</form>
+		<div class="mtl text-center">
+			<p>
+				还没有账号
+				<a href="#/login" >Login</a>
+			</p>
+			<p></p>
+		</div>
+	</div>
+</div>
