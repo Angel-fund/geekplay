@@ -1,10 +1,15 @@
 define(['app'], function (app) {
-	app.register.controller('LoginController', ['$scope', '$http',function ($scope, $http) {
+	app.register.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 		 	// $scope.filterService = filterService;
+		 	var loginApi = '/user';
 		    $scope.signup = {email : '',password:'',username:''};    
 		    $scope.signForm = function(){
-		    	// users.push({name:$scope.username,address:$scope.format}) 
-		    	console.log($scope.signup);   	
+		    	$http.post(loginApi,$scope.signup).success(function(data, status, headers, config){
+                	console.log(data);
+                	// $location.path('/'); //跳转
+	            }).error(function(data, status, headers, config){
+	                alert("error");
+	            }); 
 		    }
 		}]
 	);

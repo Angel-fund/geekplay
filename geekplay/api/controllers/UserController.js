@@ -46,7 +46,7 @@ module.exports = {
     
     // Send a JSON response
     return res.json({
-      hello: 'world'
+        user: req.params.all()
     });
   },
 
@@ -57,6 +57,9 @@ module.exports = {
    */
   create: function(req, res, next) {   
     // Create a User with the params sent from ang dont need it   
+    return res.json({
+        user: req.params.all()
+      });
     User.create(req.params.all(), function userCreated(err, user) {
 
 
