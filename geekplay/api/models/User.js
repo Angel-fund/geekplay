@@ -27,6 +27,8 @@ module.exports = {
     username: 'string',
     password: 'string',
     email: 'string',
+    role: 'integer',
+    introduce: 'text',
     //-----------------
     // instance methods
     //-----------------
