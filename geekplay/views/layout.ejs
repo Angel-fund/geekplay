@@ -27,12 +27,25 @@
     </head>
 
   <body ng-app="app">
-    
-    <!-- Include the view file for the current controller/route -->
-      <!-- <div class="picside" style="background-image: url(/images/cover/home/7.jpg);">
-        <-%- partial('partials/picside')%->
-         <-%- body %->
-      </div> -->
+   <!--  <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-collapse collapse">
+        <form class="navbar-form pull-right" method="GET" action="/search/s">
+          <div class="kr-input-group">
+            <input autocomplete="off" type="text" placeholder="搜索" class="form-control" name="q" rel="search-autocomplete">    
+            <input type="hidden" name="refer" value="nav"></div>
+          <a href="#" class="search-btn"> <i></i>
+          </a>
+        </form>
+        <ul id="nav-toolbar" class="nav navbar-nav navbar-right">
+          <li>
+            <a rel="bar-action-sign" href="#/login" data-page="product">登录</a>
+          </li>
+          <li>
+            <a rel="bar-action-sign" data-page="product" href="#/register">注册</a>
+          </li>
+        </ul>
+      </div>
+    </div> -->
     <div ng-view></div>
     <script data-main="/js/main.js" src="/js/bower_components/requirejs/require.js"></script>    
     </body>

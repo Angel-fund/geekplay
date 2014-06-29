@@ -15,13 +15,13 @@ define(['app'], function (app) {
  	    	} 	    	
  	    }
 
- 	 	$scope.joinForm = function() {
- 	 		console.log($scope.join);
- 	 		// $http.post(regApi,$scope.join).success(function(data, status, headers, config){
-     //            console.log(data);
-	    //         }).error(function(data, status, headers, config){
-	    //             alert("error");
-	    //         });
+ 	 	$scope.joinForm = function(type) {
+ 	 		$scope.join.role = type; 	 		
+ 	 		$http.post(regApi,$scope.join).success(function(data, status, headers, config){
+                console.log(data);
+	            }).error(function(data, status, headers, config){
+	                alert("error");
+	            });
 	        }
 	 	}]
 	);   

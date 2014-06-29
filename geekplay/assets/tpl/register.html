@@ -17,7 +17,7 @@
 			</div>
 		</div>
 		<div id="Team" ng-class="{hide: team}">
-			<form novalidate name="regForm" class="form-signin" ng-submit="joinForm()">
+			<form novalidate name="regForm" class="form-signin" ng-submit="joinForm(0)">
 				<input  type="text" class="form-control" placeholder="用户名" name="username" ng-model="join.username"  ng-minlength=3  ng-maxlength=20  required />
 
 				<input type="email" class="form-control" name="email" ng-model="join.email" placeholder="Email" />
@@ -28,7 +28,7 @@
 			</form>			
 		</div>
 		<div id="Investors" ng-class="{hide: investor}">
-			<form novalidate name="regForm" class="form-signin" ng-submit="joinForm()">
+			<form novalidate name="regForm" class="form-signin" ng-submit="joinForm(1)">
 				<p class="text-center">天使注册</p>
 				<input  type="text" class="form-control" placeholder="用户名" name="username" ng-model="join.username"  ng-minlength=3  ng-maxlength=20  required />
 
