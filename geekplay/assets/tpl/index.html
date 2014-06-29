@@ -1,13 +1,70 @@
-<div ng-include src="'/tpl/sidebar.html'" >	
+<div id="sidebar" ng-cloak ng-include src="'/tpl/sidebar.html'" >	
 </div>
-<div class="main">    
-    <h1 class="text-center">
-        GEEK 工业
-        <small>高科技智能硬件首发平台 了解更多</small>
-    </h1>
-    <ul>
-        <li ng-repeat="user in users">
-            <strong ng-bind="user.name"></strong>  
-        </li>
-    </ul>
+<div id="main">
+	<div ng-cloak ng-include src="'/tpl/header.html'" >	
+	</div>
+	<div class="content">
+		<div class="banner-tip">			
+		   <h1 class="text-center">
+		   	<span class="text-success">GEEK工业</span>
+		   	/  高科技硬件，首发，测评体验平台!
+		   	<br>	   
+		   	<small class="text-center">------>开启GEEK之旅</small>
+		   </h1>
+		   <span class="close">×</span>
+		</div>
+		<!-- project start-->
+		<div class="mtm project">
+			    <ul class="mtl list-inline project-cat">
+			        <li ng-repeat="item in category">
+			            <strong ng-bind="item.name"></strong>  
+			        </li>
+			        <li class="pull-right">
+			        	<a href="javascript:;" class="btn btn-success apply-btn"> <strong>+申请产品发布</strong>
+			        	</a>
+			        </li>
+			    </ul>
+
+			    <div class="row project-content">
+			    	<div class="col-md-3" ng-repeat="item in project">
+			    		<div class="text-center project-item">
+			    			<a ng-href="/project/detail/{{item.id}}"></a>
+				    		<img class="img-responsive" ng-src="{{item.pic}}" />
+				    		<p class="mtm" ng-bind="item.name"></p>		    		
+					    	<div class="priceGoodsWarp">
+				            	<div class="overlay"></div>
+				                <div class="goodsPrice text-center">￥<strong class="size16 text-danger">{{item.price}}</strong></div>
+				            </div>
+				    	</div>
+		    		</div>	    	
+			    </div>		    	
+		</div>
+		<!-- project end-->
+		<!-- Investors start-->
+		<div class="mtl investors block">
+			<div class="header">
+				<h3 class="block-title">
+					<span>活跃投资人</span>
+				</h3>
+				<p class="sub-title">我们的投资人有着丰富的投资经历</p>
+			</div>
+			<div class="row block-content">
+				<div class="col-md-4" ng-repeat="item in investors"> 
+					<div class="media item">
+					  <a class="pull-left" ng-href="/user/{{item.id}}">
+					    <img class="media-object img-circle" ng-src="{{item.avatar}}" alt="...">
+					  </a>
+					  <div class="media-body mtl">
+					    <h4 class="media-heading" ng-bind="item.username"></h4>
+					    {{item.post}}
+					  </div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- Investors end-->
+
+		
+	</div>   
 </div>
