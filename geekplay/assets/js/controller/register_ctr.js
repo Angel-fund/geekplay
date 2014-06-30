@@ -1,6 +1,6 @@
 define(['app'], function (app) {
  app.register.controller('RegisterController', ['$scope', '$http','$location', function ($scope, $http, $location) { 	 	
- 	    var regApi = '/user';// /user/create';
+ 	    var regApi = '/user/create';
  	     
  	    $scope.join = {username : '', email : '', password : ''}; 
  	    $scope.team = false;
