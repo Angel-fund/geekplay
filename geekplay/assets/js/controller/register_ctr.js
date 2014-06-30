@@ -1,22 +1,22 @@
 define(['app'], function (app) {
- app.register.controller('RegisterController', ['$scope', '$http','$location', function ($scope, $http, $location) { 	 	
+ app.register.controller('RegisterController', ['$scope', '$http','$location', function ($scope, $http, $location) {
  	    var regApi = '/user/create';
- 	     
- 	    $scope.join = {username : '', email : '', password : ''}; 
+
+ 	    $scope.join = {username : '', email : '', password : ''};
  	    $scope.team = false;
  	    $scope.investor = true;
  	    $scope.select = function(type){
- 	    	if(type == 'team'){ 	    		
+ 	    	if(type == 'team'){
     			$scope.team = false;
-    			$scope.investor = true; 	    	
+    			$scope.investor = true;
  	    	}else{
  	    		$scope.team = true;
-    			$scope.investor = false; 	
- 	    	} 	    	
+    			$scope.investor = false;
+ 	    	}
  	    }
 
  	 	$scope.joinForm = function(type) {
- 	 		$scope.join.role = type; 	 		
+ 	 		$scope.join.role = type;
  	 		$http.post(regApi,$scope.join).success(function(data, status, headers, config){
                 console.log(data);
 	            }).error(function(data, status, headers, config){
@@ -24,5 +24,5 @@ define(['app'], function (app) {
 	            });
 	        }
 	 	}]
-	);   
+	);
 });

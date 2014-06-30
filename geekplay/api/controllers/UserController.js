@@ -47,7 +47,6 @@ module.exports = {
    index: function (req, res) {
 
     // Send a JSON response
-    console.log("dfdfaf");
     return res.json({
         user: req.params.all()
     });
@@ -60,10 +59,7 @@ module.exports = {
    */
   create: function(req, res, next) {
     // Create a User with the params sent from ang dont need it
-    console.log('tt');
-    return res.json({
-      user: null
-    });
+
     //return res.json({
     //    user: req.params.all()
     //  });
