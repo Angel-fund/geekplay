@@ -10,7 +10,7 @@ var bcrypt = require('bcrypt');
 module.exports = {
 
   attributes: {
-    /*username: {
+    username: {
       type: 'string',
       required: true,
       unique: true
@@ -22,13 +22,23 @@ module.exports = {
     email: {
       type: 'string',
       required: true
-    }, */
-
-    username: 'string',
-    password: 'string',
-    email: 'string',
-    role: 'integer',
-    introduce: 'text',
+    },
+    role: {
+      type: 'integer',
+      required: true
+    },
+    introduce: {
+      type: 'text',
+      required: false,
+    },
+    address: {
+      type: 'string',
+      required: true,
+    },
+    phone: {
+      type: 'string',
+      required: true,
+    },
     //-----------------
     // instance methods
     //-----------------
