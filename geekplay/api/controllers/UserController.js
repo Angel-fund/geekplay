@@ -27,15 +27,16 @@ module.exports = {
    *    `/user/index`
   */
   login: function(req, res) {
-    User.findOne({email: req.email}).done(function (err, user) {
+    User.findOne({email: req.body.email}).done(function (err, user) {
       if (err) {
         console.log(err);
         return res.send({result: null, message: err, status: false});
       }
       else {
-        bcrypt.compare(req.password, user.password, function(err, isMatch) {
+        bcrypt.compare(req.body.password, user.password, function(err, isMatch) {
           if (err) return res.send({result: null, message: err, status: false});
-          cb(null, isMatch);
+          req.session.user = user;
+          return res.send({result: {isMatch: isMatch}, message: err, status: true});
         });
       }
     });
@@ -58,7 +59,6 @@ module.exports = {
    *    `/user`
    */
    index: function (req, res) {
-
     // Send a JSON response
     return res.json({
         user: req.params.all()
