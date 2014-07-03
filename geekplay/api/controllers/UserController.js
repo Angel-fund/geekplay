@@ -16,7 +16,7 @@
  *https://github.com/mz121star/NJBlog/tree/master/routes
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
-
+var lib = require('../../lib/common.js');
 module.exports = {
   /**
    * Action blueprints:
@@ -34,6 +34,7 @@ module.exports = {
   logout: function(req, res)
   {
     req.session.destroy();
+    res.redirect('login');
     return res.json({});
   },
 
@@ -68,7 +69,7 @@ module.exports = {
         // req.session.flash = {
         //   err: err
         // };
-        //
+        //req.session.user = user;  //写入session
         return res.send(500, { error: err, params: req.params.all() });
       }
 
@@ -79,16 +80,12 @@ module.exports = {
       }
       // Let other subscribed sockets know that the user was created.
       console.log('created user ', user);
-    /*  User.publishCreate({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        name: user.name,
-        title: user.title,
-        role: user.role,
-        online: user.online,
-        action: 'create'
-      });*/
+    // email send 
+    // lib.email.tpl('极客工业', 'osmen', '547608958@qq.com', 'http://wwww.geeksty.com', 'register');
+    // lib.email.send(function(error, response){
+    //   console.log('error',error);
+    //   console.log('response',response);
+    // });
 
 
       return res.send(201, { data: user });

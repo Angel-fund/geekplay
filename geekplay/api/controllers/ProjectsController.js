@@ -14,7 +14,7 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
-
+var lib = require('../../lib/common.js');
 module.exports = {
     
   
@@ -25,7 +25,8 @@ module.exports = {
    discover: function (req, res) {
     
     // Send a JSON response
-  console.log('gdfgdfgdfgdgf');
+
+  // console.log(lib.email);
     return res.json({data:[
           { name: '55Igor', address: '=123 tyhrtWe' },
           { name: '55lucas', address: '=nier yo ko ' },
