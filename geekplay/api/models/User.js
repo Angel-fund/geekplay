@@ -21,7 +21,8 @@ module.exports = {
     },
     email: {
       type: 'string',
-      required: true
+      required: true,
+      unique: true
     },
     role: {
       type: 'integer',
@@ -33,11 +34,11 @@ module.exports = {
     },
     address: {
       type: 'string',
-      required: true,
+      required: false,
     },
     phone: {
       type: 'string',
-      required: true,
+      required: false,
     },
     //-----------------
     // instance methods

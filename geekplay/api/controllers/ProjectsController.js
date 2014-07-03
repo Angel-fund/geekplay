@@ -16,16 +16,15 @@
  */
 
 module.exports = {
-    
-  
+
+
   /**
    * Action blueprints:
    *    `/projects/discover`
    */
    discover: function (req, res) {
-    
+
     // Send a JSON response
-  console.log('gdfgdfgdfgdgf');
     return res.json({data:[
           { name: '55Igor', address: '=123 tyhrtWe' },
           { name: '55lucas', address: '=nier yo ko ' },
@@ -56,5 +55,5 @@ module.exports = {
    */
   _config: {}
 
-  
+
 };

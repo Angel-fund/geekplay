@@ -17,6 +17,7 @@
  *https://github.com/mz121star/NJBlog/tree/master/routes
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+var bcrypt = require('bcrypt');
 
 module.exports = {
 
@@ -24,8 +25,19 @@ module.exports = {
    * Action blueprints:
    *    `/user/index`
   */
-  login: function(req, res)
-  {
+  login: function(req, res) {
+    User.findOne({email: req.email}).done(function (err, user) {
+      if (err) {
+        console.log(err);
+        return res.send({result: null, message: err, status: false});
+      }
+      else {
+        bcrypt.compare(req.password, user.password, function(err, isMatch) {
+          if (err) return res.send({result: null, message: err, status: false});
+          cb(null, isMatch);
+        });
+      }
+    });
     /* */
   },
 
@@ -33,8 +45,7 @@ module.exports = {
    * Action blueprints:
    *    `/user/logout`
   */
-  logout: function(req, res)
-  {
+  logout: function (req, res) {
     req.session.destroy();
     return res.json({});
   },
@@ -52,49 +63,31 @@ module.exports = {
     });
   },
 
-
   /**
    * Action blueprints:
    *    `/user/create`
    */
-  create: function(req, res, next) {
+  create: function (req, res, next) {
     // Create a User with the params sent from ang dont need it
 
-    //return res.json({
-    //    user: req.params.all()
-    //  });
     User.create(req.params.all(), function userCreated(err, user) {
-
-
       if (err) {
         console.log(err);
         // req.session.flash = {
         //   err: err
         // };
         //
-        return res.send(500, { error: err, params: req.params.all() });
+        return res.send({result: null, message: err, status: false});
       }
 
 
       if (!user) {
         console.error('unable to create user');
-        return res.send(500, { error: 'unknown failure', params: req.params.all() });
+        return res.send({result: null, message: 'unknown failure', status: false});
       }
       // Let other subscribed sockets know that the user was created.
       console.log('created user ', user);
-    /*  User.publishCreate({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        name: user.name,
-        title: user.title,
-        role: user.role,
-        online: user.online,
-        action: 'create'
-      });*/
-
-
-      return res.send(201, { data: user });
+      return res.send({result: user, message: 'create user success', status: true});
     });
   },
 
