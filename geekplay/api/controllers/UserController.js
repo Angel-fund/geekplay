@@ -56,7 +56,7 @@ module.exports = {
    * Action blueprints:
    *    `/user/create`
    */
-  create: function(req, res, next) {   
+  create: function(req, res, next) {
     // Create a User with the params sent from ang dont need it   
     return res.json({
         user: req.params.all()
