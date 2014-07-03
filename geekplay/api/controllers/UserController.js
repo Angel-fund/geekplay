@@ -18,6 +18,7 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 var bcrypt = require('bcrypt');
+var lib = require('../../lib/common.js');
 
 module.exports = {
 
@@ -47,6 +48,7 @@ module.exports = {
   */
   logout: function (req, res) {
     req.session.destroy();
+    res.redirect('login');
     return res.json({});
   },
 
@@ -68,15 +70,9 @@ module.exports = {
    *    `/user/create`
    */
   create: function (req, res, next) {
-    // Create a User with the params sent from ang dont need it
-
     User.create(req.params.all(), function userCreated(err, user) {
       if (err) {
         console.log(err);
-        // req.session.flash = {
-        //   err: err
-        // };
-        //
         return res.send({result: null, message: err, status: false});
       }
 

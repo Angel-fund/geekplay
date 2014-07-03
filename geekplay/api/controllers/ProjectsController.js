@@ -14,7 +14,7 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
-
+var lib = require('../../lib/common.js');
 module.exports = {
 
 

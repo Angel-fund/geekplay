@@ -1,8 +1,8 @@
 define(['app'], function (app) {
 	app.register.controller('LoginController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
 		 	// $scope.filterService = filterService;
-		 	var loginApi = '/user';
-		    $scope.signup = {email : '',password:'',username:''};    
+		 	var loginApi = '/user/login';
+		    $scope.signup = {email : '',password:''};    
 		    $scope.signForm = function(){
 		    	$http.post(loginApi,$scope.signup).success(function(data, status, headers, config){
                 	console.log(data);
